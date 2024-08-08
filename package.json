@@ -6,12 +6,13 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "react-native start --port=8082",
     "test": "jest"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.73.0"
+    "react-native": "0.73.0",
+    "react-native-splash-screen": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
