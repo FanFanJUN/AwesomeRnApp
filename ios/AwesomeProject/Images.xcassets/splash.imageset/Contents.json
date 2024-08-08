@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "splash_screenq.png",
+      "filename" : "splash_screenq_update_0511.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "splash_screenq 1.png",
+      "filename" : "splash_screenq_update_0511 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "splash_screenq 2.png",
+      "filename" : "splash_screenq_update_0511 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

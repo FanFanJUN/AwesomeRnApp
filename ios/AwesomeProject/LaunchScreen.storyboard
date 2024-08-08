@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -14,37 +14,26 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="OmX-nh-tR3">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="xlp-xY-7xJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="10" id="3wy-Km-ekH"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" constant="10" id="4FB-8j-1fg"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" constant="10" id="5Ps-Yd-euj"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" id="B2c-Fi-60m"/>
-                            <constraint firstAttribute="bottom" secondItem="OmX-nh-tR3" secondAttribute="bottom" id="DYY-zk-oic"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" constant="10" id="KQW-AE-1NW"/>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ZqQ-h2-bdb"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" id="eiK-Rm-eno"/>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="10" id="ewb-Qe-rZr"/>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" constant="10" id="fSB-qX-1zq"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" id="hz8-xf-0io"/>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="nNq-wn-zVd"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" id="uRu-yK-PFv"/>
-                            <constraint firstAttribute="trailing" secondItem="OmX-nh-tR3" secondAttribute="trailing" id="vrW-h0-xfs"/>
-                            <constraint firstItem="OmX-nh-tR3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xsh-n1-k8C"/>
+                            <constraint firstItem="xlp-xY-7xJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="CNG-EE-J3P"/>
+                            <constraint firstAttribute="trailing" secondItem="xlp-xY-7xJ" secondAttribute="trailing" id="Cyg-hH-aD1"/>
+                            <constraint firstAttribute="bottom" secondItem="xlp-xY-7xJ" secondAttribute="bottom" id="RfW-Bw-XAY"/>
+                            <constraint firstItem="xlp-xY-7xJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="sS6-dE-kuh"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.200000000000003" y="372.41379310344831"/>
+            <point key="canvasLocation" x="43.125" y="370.77464788732397"/>
         </scene>
     </scenes>
     <resources>
