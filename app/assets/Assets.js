@@ -29,6 +29,10 @@ const ImageRes = {
 
   mine_nomal: require('./images/tabbar/mine_nomal.png'),
   mine_select: require('./images/tabbar/mine_select.png'),
+
+  polymerize_chuneng: require('./polymerize/chuneng.png'),
+  polymerize_xuneng: require('./polymerize/xuneng.png'),
+  polymerize_eam: require('./polymerize/eam.png'),
 };
 
 /**

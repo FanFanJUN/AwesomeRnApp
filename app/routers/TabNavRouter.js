@@ -4,8 +4,7 @@ import {Colors, ImageRes} from '../assets/Assets';
 import Badge from '../../app/component/Badge';
 import {StyleSheet, Image, Text, DeviceEventEmitter, View} from 'react-native';
 import px2dp from '../utils/Ratio';
-// import polymerizeDrawer from '@pages/polymerize/components/polymerizeDrawer';
-import single from '../utils/single';
+import polymerizeDrawer from '../pages/polymerizeDrawer/index';
 
 const TabBarItem = ({focused, normal, selected}) => (
   <Image
@@ -46,7 +45,7 @@ const TabNavRouter = createBottomTabNavigator(
           ),
           tabBarOnPress: e => {
             onChangeMoreClick(false);
-            // polymerizeDrawer.dismiss();
+            polymerizeDrawer.dismiss();
             e.defaultHandler();
           },
           tabBarIcon: ({focused}) => (
@@ -83,7 +82,7 @@ const TabNavRouter = createBottomTabNavigator(
           ),
           tabBarOnPress: e => {
             onChangeMoreClick(false);
-            // polymerizeDrawer.dismiss();
+            polymerizeDrawer.dismiss();
             e.defaultHandler();
           },
           tabBarIcon: ({focused}) => (
@@ -120,7 +119,7 @@ const TabNavRouter = createBottomTabNavigator(
           ),
           tabBarOnPress: e => {
             onChangeMoreClick(false);
-            // polymerizeDrawer.dismiss();
+            polymerizeDrawer.dismiss();
             e.defaultHandler();
           },
           tabBarIcon: ({focused}) => (
@@ -154,18 +153,10 @@ const TabNavRouter = createBottomTabNavigator(
           tabBarOnLongPress: async e => {},
           tabBarOnPress: async e => {
             onChangeMoreClick(true);
-            // let res = await polymerizeDrawer.show();
-            // if (res?.index===1){
-            //   if (res?.item.toUrl){
-            //     const globalProps = res?.item || {};
-            //     polymerizeDrawer.dismiss();
-            //     navigation.push(res?.item.toUrl,{globalProps})
-            //     return onChangeMoreClick(false)
-            //   }
-            //   DeviceEventEmitter.emit('onClickMore',{code:res?.item?.code})
-            //   e.defaultHandler();
-            // }
-            // onChangeMoreClick(false)
+            let res = await polymerizeDrawer.show();
+            if (res?.index === 1) {
+            }
+            onChangeMoreClick(false);
           },
           ...obj,
           tabBarIcon: ({focused}) => (

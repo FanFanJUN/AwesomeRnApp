@@ -9,15 +9,12 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, useColorScheme} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import AppContainer from './app/routers/AppContainer';
+import Portal from './app/component/portal';
 
 function App(props) {
   const isDarkMode = useColorScheme() === 'dark';
   const [isMoreClick, setIsMoreClick] = useState(false);
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   useEffect(() => {
     SplashScreen.hide();
@@ -28,13 +25,15 @@ function App(props) {
   };
 
   return (
-    <AppContainer
-      screenProps={{
-        ...props,
-        isMoreClick,
-        onChangeMoreClick: onChangeMoreClick,
-      }}
-    />
+    <Portal.Provider>
+      <AppContainer
+        screenProps={{
+          ...props,
+          isMoreClick,
+          onChangeMoreClick: onChangeMoreClick,
+        }}
+      />
+    </Portal.Provider>
   );
 }
 
