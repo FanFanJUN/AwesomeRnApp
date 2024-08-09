@@ -113,7 +113,12 @@ class Toast {
   initType = (position: ToastPosition): void => {
     this.__type__ = position;
   };
-  show = (message: ToastMessage, isTouch: Boolean): void => {
+  show = (
+    message: ToastMessage,
+    position = 'bottom',
+    isTouch: Boolean,
+  ): void => {
+    this.initType(position);
     this.toast('success', message, isTouch == undefined ? true : isTouch);
   };
   success = (message: ToastMessage): void => {

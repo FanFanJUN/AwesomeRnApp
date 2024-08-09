@@ -156,7 +156,7 @@ const TabNavRouter = createBottomTabNavigator(
             onChangeMoreClick(true);
             let res = await polymerizeDrawer.show();
             if (res?.index === 1) {
-              toast.show('消息');
+              toast.show('消息', 'center');
             }
             onChangeMoreClick(false);
           },
