@@ -5,6 +5,7 @@ import Badge from '../../app/component/Badge';
 import {StyleSheet, Image, Text, DeviceEventEmitter, View} from 'react-native';
 import px2dp from '../utils/Ratio';
 import polymerizeDrawer from '../pages/polymerizeDrawer/index';
+import toast from '../component/toast';
 
 const TabBarItem = ({focused, normal, selected}) => (
   <Image
@@ -155,6 +156,7 @@ const TabNavRouter = createBottomTabNavigator(
             onChangeMoreClick(true);
             let res = await polymerizeDrawer.show();
             if (res?.index === 1) {
+              toast.show('消息');
             }
             onChangeMoreClick(false);
           },

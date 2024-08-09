@@ -7,17 +7,17 @@ import {screenH, screenW} from '../../utils/ScreenUtil';
 
 const MENU_LIST = [
   {
-    name: 'EAM',
+    name: 'APP1',
     code: 'APPLIANCE_ENUM.APPLIANCE_EAM',
     icon: ImageRes.polymerize_eam,
   },
   {
-    name: '储能',
+    name: 'APP2',
     code: 'APPLIANCE_ENUM.APPLIANCE_EES',
     icon: ImageRes.polymerize_chuneng,
   },
   {
-    name: '蓄能',
+    name: 'APP3',
     code: 'APPLIANCE_ENUM.APPLIANCE_SHUIXUNENG',
     icon: ImageRes.polymerize_xuneng,
   },
@@ -84,12 +84,13 @@ const styles = StyleSheet.create({
   container: {
     maxHeight: screenH * 0.75,
     minHeight: 150,
-    width: screenW,
+    width: 'auto',
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOffset: {width: 3, height: 9},
     backgroundColor: 'white',
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
+    borderRadius: 12,
   },
   panel: {marginTop: 20},
   header: {height: 30, marginHorizontal: 20},
@@ -127,10 +128,9 @@ class PolymerizeDrawer {
               resolve();
             }}
             style={{
-              justifyContent: 'flex-end',
+              justifyContent: 'center',
               overflow: 'hidden',
               alignItems: 'center',
-              bottom: 80,
             }}>
             <ADrawer
               onClose={event => {
