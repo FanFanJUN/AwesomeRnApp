@@ -33,6 +33,26 @@ const ImageRes = {
   polymerize_chuneng: require('./polymerize/chuneng.png'),
   polymerize_xuneng: require('./polymerize/xuneng.png'),
   polymerize_eam: require('./polymerize/eam.png'),
+
+  eamEmpty: require('./images/eam/eamEmpty.png'), //设备台账的的没有数据的图标
+  eamNoPower: require('./images/eam/eamNoPower.png'), //eam没有权限的图片
+  eamClear: require('./images/eam/eamClear.png'), //Eam搜索框 清除搜索内容的图标
+  eam_editor: require('./images/eam/icon_edit.png'), //编辑图标
+  icon_mail: require('./images/eam/icon_mail.png'),
+  eamApps: require('./images/eam/eamApps.png'), //Eam  搜索的时候 应用的图标
+  eamWorkTicket: require('./images/eam/eamWorkTicket.png'), //Eam  搜索的时候 应用的图标
+  operationTicket: require('./images/eam/operationTicket.png'), //Eam  搜索的时候 操作票的图标
+  eamFault: require('./images/eam/eamFault.png'), //Eam  搜索的时候 应用的图标
+  eamParts: require('./images/eam/eamParts.png'), //Eam  搜索的时候 部件的图标
+  eamStation: require('./images/eam/eamStation.png'), //Eam  搜索的时候 场站的图标
+  eamWindmill: require('./images/eam/eamWindmill.png'), //Eam  搜索的时候 风机的图标
+  eamMore: require('./images/eam/eamMore.png'), //Eam  搜索页的查看更多图标  eam_icon_down
+  eam_icon_up: require('./images/eam/eam_icon_up.png'), //Eam  搜索历史查看更多的向上的图标
+  eam_icon_down: require('./images/eam/eam_icon_down.png'), //Eam  搜索历史查看更多的向下的图标
+  eamBack: require('./images/eam/eamBack.png'), //Eam 搜索的列表页面的返回按钮
+  icon_entry: require('./images/eam/icon_entry.png'), //Eam   故障详情里面 进入详情的icon
+  icon_add: require('./images/eam/icon_add.png'), //Eam 上传附件的添加icon
+  icon_read: require('./images/eam/eam_read.png'), //Eam 已读的icon
 };
 
 /**

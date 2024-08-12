@@ -6,6 +6,8 @@ import {StyleSheet, Image, Text, DeviceEventEmitter, View} from 'react-native';
 import px2dp from '../utils/Ratio';
 import polymerizeDrawer from '../pages/polymerizeDrawer/index';
 import toast from '../component/toast';
+import Govern from '../pages/Govern/govern';
+import {statusBarHeight} from '../utils';
 
 const TabBarItem = ({focused, normal, selected}) => (
   <Image
@@ -15,11 +17,14 @@ const TabBarItem = ({focused, normal, selected}) => (
   />
 );
 
-const comp = () => (
-  <View style={{flex: 1}}>
-    <Text>ccc</Text>
-  </View>
-);
+const comp = () => {
+  console.log('statusBarHeight', statusBarHeight);
+  return (
+    <View style={{flex: 1}}>
+      <Text>ccc</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   image: {
@@ -68,7 +73,7 @@ const TabNavRouter = createBottomTabNavigator(
     },
 
     work: {
-      screen: comp,
+      screen: Govern,
       navigationOptions: ({screenProps}) => {
         const {isMoreClick, onChangeMoreClick} = screenProps;
         return {
@@ -156,7 +161,10 @@ const TabNavRouter = createBottomTabNavigator(
             onChangeMoreClick(true);
             let res = await polymerizeDrawer.show();
             if (res?.index === 1) {
-              toast.show('消息', 'center');
+              // toast.show('消息', 'center');
+              // DeviceEventEmitter('onClickMore', {code: res?.item?.code});
+              this.props.navigation.navigate('eam');
+              e.defaultHandler();
             }
             onChangeMoreClick(false);
           },

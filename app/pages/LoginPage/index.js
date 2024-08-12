@@ -84,7 +84,7 @@ export default class LoginPage extends Component {
             marginLeft: px2dp(80),
             marginTop: px2dp(48),
           }}>
-          欢迎登录零碳能源
+          欢迎登录
         </Text>
       </ImageBackground>
     );
@@ -298,7 +298,7 @@ export default class LoginPage extends Component {
               ? styles.btn_height
               : styles.btn_normal
           }
-          disabled={!isAccountTextInputEmpty || !isPwdTextInputEmpty}
+          // disabled={!isAccountTextInputEmpty || !isPwdTextInputEmpty}
           onPress={this._onSubmit}
         />
       </View>

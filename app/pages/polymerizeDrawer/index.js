@@ -84,13 +84,13 @@ const styles = StyleSheet.create({
   container: {
     maxHeight: screenH * 0.75,
     minHeight: 150,
-    width: 'auto',
+    width: screenW,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOffset: {width: 3, height: 9},
     backgroundColor: 'white',
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
-    borderRadius: 12,
+    // borderRadius: 12,
   },
   panel: {marginTop: 20},
   header: {height: 30, marginHorizontal: 20},
@@ -128,9 +128,10 @@ class PolymerizeDrawer {
               resolve();
             }}
             style={{
-              justifyContent: 'center',
+              justifyContent: 'flex-end',
               overflow: 'hidden',
               alignItems: 'center',
+              bottom: 80,
             }}>
             <ADrawer
               onClose={event => {

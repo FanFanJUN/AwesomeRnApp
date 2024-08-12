@@ -8,6 +8,7 @@ import {scaleSize} from '../utils/ScreenUtil';
 import {StackViewStyleInterpolator} from 'react-navigation-stack';
 import SplashPage from '../pages/splash/SplashPage';
 import TabNavRouter from './TabNavRouter';
+import Govern from '../pages/Govern/govern';
 
 const stackNavConfig = {
   defaultNavigationOptions: {
@@ -80,6 +81,10 @@ const StackNavRouter = createStackNavigator(
     },
     main: {
       screen: TabNavRouter,
+      navigationOptions: {},
+    },
+    eam: {
+      screen: Govern,
       navigationOptions: {},
     },
   },
