@@ -16,7 +16,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import LargeButton from '../../component/button/LargeButton';
 import _ from 'lodash';
 import dismissKeyboard from 'react-native/Libraries/Utilities/dismissKeyboard';
-export default class LoginPage extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -407,3 +407,13 @@ const styles = StyleSheet.create({
     color: Colors.c_gray_0,
   },
 });
+
+export default LoginPage;
+
+import {useNavigation} from '@react-navigation/native';
+
+export function LoginPageFunc() {
+  const navigation = useNavigation();
+
+  return <LoginPage navigation={navigation} />;
+}

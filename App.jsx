@@ -6,14 +6,13 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, useColorScheme} from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
+import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import AppContainer from './app/routers/AppContainer';
 import Portal from './app/component/portal';
+import SplashScreen from 'react-native-splash-screen';
 
 function App(props) {
-  const isDarkMode = useColorScheme() === 'dark';
   const [isMoreClick, setIsMoreClick] = useState(false);
 
   useEffect(() => {

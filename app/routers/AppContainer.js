@@ -1,6 +1,6 @@
-import {createAppContainer} from 'react-navigation';
+import {createStaticNavigation} from '@react-navigation/native';
 import StackNavRouter from './StackNavRouter';
 
-const AppContainer = createAppContainer(StackNavRouter);
+const AppContainer = createStaticNavigation(StackNavRouter);
 
 export default AppContainer;

@@ -1,5 +1,4 @@
 import React from 'react';
-import {createBottomTabNavigator} from 'react-navigation';
 import {Colors, ImageRes} from '../assets/Assets';
 import Badge from '../../app/component/Badge';
 import {StyleSheet, Image, Text, DeviceEventEmitter, View} from 'react-native';
@@ -8,6 +7,7 @@ import polymerizeDrawer from '../pages/polymerizeDrawer/index';
 import toast from '../component/toast';
 import Govern from '../pages/Govern/govern';
 import {statusBarHeight} from '../utils';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const TabBarItem = ({focused, normal, selected}) => (
   <Image
@@ -33,7 +33,159 @@ const styles = StyleSheet.create({
   },
 });
 
-const TabNavRouter = createBottomTabNavigator(
+const TabNavRouter = createBottomTabNavigator({
+  initialRouteName: 'work',
+  screenOptions: {},
+  screens: {
+    message: {
+      screen: comp,
+      options: ({screenProps}) => {
+        console.log('screenProps', screenProps);
+        const {isMoreClick, onChangeMoreClick} = screenProps;
+        return {
+          tabBarLabel: ({tintColor}) => (
+            <Text
+              style={{
+                color: isMoreClick ? Colors.c_gray_3 : tintColor,
+                textAlign: 'center',
+              }}>
+              {'收件箱'}
+            </Text>
+          ),
+          tabBarOnPress: e => {
+            onChangeMoreClick(false);
+            polymerizeDrawer.dismiss();
+            e.defaultHandler();
+          },
+          tabBarIcon: ({focused}) => (
+            <Badge
+              dot={false}
+              count={screenProps.messageCount}
+              color={'#F43C24'}
+              offsetY={8}
+              offsetX={-5}>
+              <TabBarItem
+                focused={isMoreClick ? false : focused}
+                normal={ImageRes.receive_message_nomal}
+                selected={ImageRes.receive_message_select}
+              />
+            </Badge>
+          ),
+        };
+      },
+    },
+
+    work: {
+      screen: comp,
+      options: ({screenProps}) => {
+        const {isMoreClick, onChangeMoreClick} = screenProps;
+        return {
+          tabBarLabel: ({tintColor}) => (
+            <Text
+              style={{
+                color: isMoreClick ? Colors.c_gray_3 : tintColor,
+                textAlign: 'center',
+              }}>
+              {'工作台'}
+            </Text>
+          ),
+          tabBarOnPress: e => {
+            onChangeMoreClick(false);
+            polymerizeDrawer.dismiss();
+            e.defaultHandler();
+          },
+          tabBarIcon: ({focused}) => (
+            <Badge
+              dot={false}
+              count={screenProps.count}
+              color={'#F43C24'}
+              offsetY={8}
+              offsetX={-5}>
+              <TabBarItem
+                focused={isMoreClick ? false : focused}
+                normal={ImageRes.work_table_normal}
+                selected={ImageRes.work_table_select}
+              />
+            </Badge>
+          ),
+        };
+      },
+    },
+
+    mine: {
+      screen: comp,
+      options: ({screenProps}) => {
+        const {isMoreClick, onChangeMoreClick} = screenProps;
+        return {
+          tabBarLabel: ({tintColor}) => (
+            <Text
+              style={{
+                color: isMoreClick ? Colors.c_gray_3 : tintColor,
+                textAlign: 'center',
+              }}>
+              {'我的'}
+            </Text>
+          ),
+          tabBarOnPress: e => {
+            onChangeMoreClick(false);
+            polymerizeDrawer.dismiss();
+            e.defaultHandler();
+          },
+          tabBarIcon: ({focused}) => (
+            <TabBarItem
+              focused={isMoreClick ? false : focused}
+              normal={ImageRes.mine_nomal}
+              selected={ImageRes.mine_select}
+            />
+          ),
+        };
+      },
+    },
+    more: {
+      screen: comp,
+      options: ({navigation, screenProps}) => {
+        const {hasMore = true, isMoreClick, onChangeMoreClick} = screenProps;
+        let obj = {};
+        /* if (!hasMore) {
+            obj.tabBarButtonComponent = () => null;
+          } */
+        return {
+          tabBarLabel: ({tintColor}) => (
+            <Text
+              style={{
+                color: isMoreClick ? Colors.c_theme_bule : tintColor,
+                textAlign: 'center',
+              }}>
+              {'更多'}
+            </Text>
+          ),
+          tabBarOnLongPress: async e => {},
+          tabBarOnPress: async e => {
+            onChangeMoreClick(true);
+            let res = await polymerizeDrawer.show();
+            if (res?.index === 1) {
+              // toast.show('消息', 'center');
+              // DeviceEventEmitter('onClickMore', {code: res?.item?.code});
+              this.props.navigation.navigate('eam');
+              e.defaultHandler();
+            }
+            onChangeMoreClick(false);
+          },
+          ...obj,
+          tabBarIcon: ({focused}) => (
+            <TabBarItem
+              focused={isMoreClick ? hasMore : focused}
+              normal={ImageRes.more_normal}
+              selected={ImageRes.more_selected}
+            />
+          ),
+        };
+      },
+    },
+  },
+});
+
+const OLdTabNavRouter = createBottomTabNavigator(
   {
     message: {
       screen: comp,
@@ -217,12 +369,12 @@ const TabNavRouter = createBottomTabNavigator(
   },
 );
 
-TabNavRouter.navigationOptions = ({navigation}) => {
+/* TabNavRouter.navigationOptions = ({navigation}) => {
   const component = TabNavRouter.router.getComponentForState(navigation.state);
   if (typeof component.navigationOptions === 'function') {
     return component.navigationOptions({navigation});
   }
   return component.navigationOptions;
-};
+}; */
 
 export default TabNavRouter;
